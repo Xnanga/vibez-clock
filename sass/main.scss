@@ -1,0 +1,125 @@
+// Variables
+
+$default-font-size: 1.6rem;
+$main-color-one: #957dad;
+
+// Mixins
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Defaults
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", "Helvetica", arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $default-font-size;
+  box-sizing: inherit;
+
+  height: 100vh;
+  background-color: $main-color-one;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: darken($main-color-one, 25%);
+  border-radius: 2rem;
+  color: #000;
+  font-family: "Bungee", cursive;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover {
+    background: darken($main-color-one, 35%);
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    color: #fff;
+  }
+}
+
+select {
+  width: 10rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+// Typography
+
+h1 {
+  font-family: "Bungee Shade", cursive;
+  font-size: 7rem;
+}
+
+span {
+  font-family: "Bungee", cursive;
+  font-size: 2rem;
+}
+
+.intro-highlight {
+  display: inline-block;
+  background-color: darken($main-color-one, 15%);
+  padding: 1rem 0.5rem;
+  transform: skew(-5deg);
+}
+
+// Layout
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.timer-container {
+}
+
+.selection-container {
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Components
+
+.video-box {
+  width: 50vw;
+  height: 50vh;
+  border: 1rem solid darken($main-color-one, 25%);
+  border-radius: 1rem;
+}
