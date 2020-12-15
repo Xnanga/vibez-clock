@@ -38,13 +38,13 @@ const updateTime = function () {
 const updateDay = function () {
   const now = new Date();
   const weekday = [];
-  weekday[0] = "Sunday";
-  weekday[1] = "Monday";
-  weekday[2] = "Tuesday";
-  weekday[3] = "Wednesday";
-  weekday[4] = "Thursday";
-  weekday[5] = "Friday";
-  weekday[6] = "Saturday";
+  weekday[0] = "sunday";
+  weekday[1] = "monday";
+  weekday[2] = "tuesday";
+  weekday[3] = "wednesday";
+  weekday[4] = "thursday";
+  weekday[5] = "friday";
+  weekday[6] = "saturday";
 
   currentDayLabel.textContent = `${weekday[now.getDay()]},`;
   return weekday[now.getDay()];
@@ -94,21 +94,20 @@ const chooseVideo = function (dayOfWeek) {
   let videoID;
   const URLPartOne = `https://www.youtube.com/embed/`;
   const URLPartTwo = `?controls=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;fs=0&amp;rel=0`;
-  video.src = `${URLPartOne}${videoID}${URLPartTwo}`;
 
-  if (dayOfWeek === "Monday") {
+  if (dayOfWeek === "monday") {
     videoID = "N9wsjroVlu8";
-  } else if (dayOfWeek === "Tuesday") {
+  } else if (dayOfWeek === "tuesday") {
     videoID = "7nJGCR7HtrM";
-  } else if (dayOfWeek === "Wednesday") {
+  } else if (dayOfWeek === "wednesday") {
     videoID = "du-TY1GUFGk";
-  } else if (dayOfWeek === "Thursday") {
+  } else if (dayOfWeek === "thursday") {
     videoID = "Ex8B4qQOE-M";
-  } else if (dayOfWeek === "Friday") {
+  } else if (dayOfWeek === "friday") {
     videoID = "aCDM8bURT08";
-  } else if (dayOfWeek === "Saturday") {
+  } else if (dayOfWeek === "saturday") {
     videoID = "oRuEWFHnq8g";
-  } else if (dayOfWeek === "Sunday") {
+  } else if (dayOfWeek === "sunday") {
     videoID = "dEdZC7EExCM";
   }
 
