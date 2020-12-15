@@ -28,6 +28,7 @@ html {
 }
 
 body {
+  display: fixed;
   font-size: $default-font-size;
   box-sizing: inherit;
 
@@ -78,7 +79,7 @@ select {
 
 h1 {
   font-family: "Bungee Shade", cursive;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 span {
