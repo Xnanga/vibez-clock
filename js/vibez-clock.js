@@ -2,13 +2,21 @@
 
 // DOM ELEMENTS
 
-const currentTimeLabel = document.querySelector(".intro-text-time");
+const currentTimeLabel = [...document.querySelectorAll(".intro-text-time")];
 const currentDayLabel = document.querySelector(".intro-text-day");
 const currentDateLabel = document.querySelector(".intro-text-date");
 const currentMonthLabel = document.querySelector(".intro-text-month");
 
+let userTimeLabel = document.querySelector(".user-text-time");
+let userDayLabel = document.querySelector(".user-text-day");
+const userTimeSelector = document.querySelector(".hour-selector");
+const userDaySelector = document.querySelector(".day-selector");
+const userMessage = document.querySelector(".timer-container-user");
+
 const video = document.querySelector("iframe");
 const button = document.querySelector("button");
+
+const errorMessage = document.querySelector(".error-message");
 
 // FUNCTIONS
 
@@ -21,7 +29,10 @@ const controller = function () {
 
 const updateTime = function () {
   const now = new Date();
-  currentTimeLabel.textContent = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
+  currentTimeLabel.forEach(
+    (label, i) => (label.textContent = `${now.getHours()}:${now.getMinutes()}`)
+  );
 };
 
 const updateDay = function () {
@@ -104,6 +115,23 @@ const chooseVideo = function (dayOfWeek) {
   video.src = `${URLPartOne}${videoID}${URLPartTwo}`;
 };
 
+const userSetTimeDay = function (hour, day) {
+  formattedHour = hour.split("");
+  formattedHour[2] = ":";
+  formattedHour[4] = "0";
+  finalHour = formattedHour.join("");
+
+  userTimeLabel.textContent = `${finalHour}`;
+  userDayLabel.textContent = `${day}.`;
+
+  userMessage.style = "display: initial";
+  chooseVideo(day);
+};
+
+// const displayError = function () {
+//   errorMessage.style = "display: initial";
+// };
+
 controller();
 
 // Event Listeners
@@ -113,5 +141,12 @@ window.setInterval(function () {
 }, 1000);
 
 button.addEventListener("click", function () {
-  console.log("Button Pressed");
+  if (userDaySelector.value != "none" && userTimeSelector.value != "none") {
+    const hour = userTimeSelector.value;
+    const day = userDaySelector.value;
+    userSetTimeDay(hour, day);
+    errorMessage.style = "display: none";
+  } else {
+    errorMessage.style = "display: initial";
+  }
 });

@@ -93,6 +93,12 @@ span {
   transform: skew(-5deg);
 }
 
+.error-message {
+  display: none;
+  color: #c0392b;
+  font-weight: 800;
+}
+
 // Layout
 
 .content {
@@ -107,6 +113,14 @@ span {
 }
 
 .selection-container {
+}
+
+.timer-container-user {
+  display: none;
+}
+
+.timer-container-user > * {
+  font-size: 1.5rem;
 }
 
 .option-container {

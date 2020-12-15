@@ -34,6 +34,12 @@
         <span> of </span>
         <span class="intro-highlight intro-text-month">X</span>
       </div>
+      <div class="timer-container timer-container-user">
+        <span>But you've manually selected</span>
+        <span class="intro-highlight user-text-time">XX:XX:XX</span>
+        <span>on a</span>
+        <span class="intro-highlight user-text-day">DAY</span>
+      </div>
       <div class="video-box">
         <iframe
           width="100%"
@@ -44,10 +50,11 @@
         ></iframe>
       </div>
       <span class="end-text-line">Wanna try a different day or time?</span>
+      <p class="error-message">Please set both a day and time.</p>
       <div class="selection-container">
         <div class="option-container">
           <span class="end-text-time">Time:</span>
-          <select name="Hour">
+          <select class="hour-selector" name="Hour">
             <option value="none">Select Hour</option>
 
             <option value="0000">00:00</option>
@@ -83,20 +90,20 @@
         </div>
         <div class="option-container">
           <span class="end-text-day">Day:</span>
-          <select name="Hour">
+          <select class="day-selector" name="Day">
             <option value="none">Select Day</option>
 
-            <option value="mon">Monday</option>
-            <option value="tue">Tuesday</option>
-            <option value="wed">Wednesday</option>
-            <option value="thu">Thursday</option>
-            <option value="fri">Friday</option>
-            <option value="sat">Saturday</option>
-            <option value="sun">Sunday</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
           </select>
         </div>
       </div>
-      <button>Make it right!</button>
+      <button>Time Travel!</button>
     </main>
     <script src="js/vibez-clock.js"></script>
   </body>
