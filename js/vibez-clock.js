@@ -31,7 +31,8 @@ const updateTime = function () {
   const now = new Date();
 
   currentTimeLabel.forEach(
-    (label, i) => (label.textContent = `${now.getHours()}:${now.getMinutes()}`)
+    (label, i) =>
+      (label.textContent = `${now.getHours()}:${padTime(now.getMinutes())}`)
   );
 };
 
@@ -56,11 +57,11 @@ const updateDate = function () {
   const dateSeperated = String(date).split("");
   let tense;
 
-  if (dateSeperated[1] === 1) {
+  if (dateSeperated[0] === "1") {
     tense = "th";
-  } else if (dateSeperated === 2) {
+  } else if (dateSeperated[0] === "2") {
     tense = "nd";
-  } else if (dateSeperated === 3) {
+  } else if (dateSeperated[0] === "3") {
     tense = "rd";
   } else {
     tense = "th";
@@ -127,9 +128,16 @@ const userSetTimeDay = function (hour, day) {
   chooseVideo(day);
 };
 
-// const displayError = function () {
-//   errorMessage.style = "display: initial";
-// };
+const padTime = function (min) {
+  const s = String(min);
+  const minutes = s.split("");
+
+  if (minutes.length < 2) {
+    return "0" + String(min);
+  } else {
+    return min;
+  }
+};
 
 controller();
 

@@ -11,7 +11,6 @@ html {
   box-sizing: border-box; }
 
 body {
-  display: fixed;
   font-size: 1.6rem;
   box-sizing: inherit;
   height: 100vh;
